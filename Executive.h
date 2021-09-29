@@ -9,8 +9,10 @@ class Executive
 private:
   Player player1;
   Player player2;
+  Player playerAi;
   int player1ships;
   int player2ships;
+  int playerAiships;
   int ships;
 public:
   Executive();
@@ -29,6 +31,8 @@ public:
   //@process - places a ship with the passed size on the passed players gameBoard.
   //@return - none
 
+  void place_shipAi(int size, Player& new_player);
+
   void game_start(Player& player1, Player& player2, int size);
   //@input - player1 - a passed player object.
   //@input - player2 - a passed player object
@@ -36,6 +40,9 @@ public:
   //@process - runs the games turns and checks for a win for both players.
   //@return - none
 
+  int aiRandomRow();
+
+  int aiRandomCol();
 };
 
 #endif
